@@ -1,7 +1,7 @@
 import { Icon } from "../components/Icon";
 
 export function generateStaticParams() {
-  return new Array(1000).fill(0).map((_, i) => ({ id: i.toString() }));
+  return new Array(10).fill(0).map((_, i) => ({ id: i.toString() }));
 }
 
 export default function Page() {

@@ -1,0 +1,18 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nextjs-app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - app_storage:/app/storage
+
+volumes:
+  app_storage:
+    name: nextjs_storage_vol
+    # Note: Docker Compose does not support size limits for local driver volumes out of the box.
+    # To enforce 10GB, you would need block-oriented storage or XFS project quotas on the host.
